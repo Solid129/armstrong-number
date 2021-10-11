@@ -1,18 +1,20 @@
 # Armstrong Number 
 
-### Commands to Run
+### Installation
 
 * Clone this project
+
+> git clone https://github.com/Solid129/armstrong-number
+
 * Install dependencies of the project
 
-> npm i
+> npm install
 
 Run the project using
 
 > node index.js
 
 # Introduction 
-
 * Verifies if entered number is an Armstrong number or not.
 * An Armstrong number is an n-digit base b number such that the sum of its (base b) digits raised to the power n is the number itself. Hence, 153 is an Armstrong number because:  <p style="color:yellow">1<sup>3</sup>+5<sup>3</sup>+3<sup>3</sup> = 153
 * if not an Armstrong number program returns next lowest and highest Armstrong numbers, like for 152 it will return lowest = 9 and highest = 153.
