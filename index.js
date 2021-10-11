@@ -12,22 +12,24 @@ function main() {
   let number = prompt();
 
   while (true) {
-    console.time('timer');
+    console.time('Time Taken is');
     number === 'exit' ? process.exit() : null;
     while (isNaN(Number(number)) || number === "") {
       console.log('Enter a valid number to continue or Type "exit" to EXIT');
       number = prompt();
       number === 'exit' ? process.exit() : null;
     }
-
+    const memoryBefore = process.memoryUsage().heapUsed / 1024;
     // first check if number is armstrong or not
     const check = checkArmstrong(Number(number), number.length);
     if (check) {
-      console.timeEnd('timer');
+      console.timeEnd('Time Taken is');
+      console.log(`Memory Used is: ${((process.memoryUsage().heapUsed / 1024) - memoryBefore).toFixed(1)} KB`)
       console.log(`${number} is an Armstrong Number`)
     } else {
       const [lower, higher] = getNearbyArmstrongNumbers(Number(number));
-      console.timeEnd('timer');
+      console.timeEnd('Time Taken is');
+      console.log(`Memory Used is: ${((process.memoryUsage().heapUsed / 1024) - memoryBefore).toFixed(1)} KB`)
       console.log(`${number} is Not an Armstrong Number`);
       console.log(`${lower} is Closest Lower Armstrong Number`);
       console.log(`${higher} is Closest Higher Armstrong Number`);
